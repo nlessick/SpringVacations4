@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View All Vacations</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentVacation : ${vacations}">
+	<td th:text="${currentVacation.id}"/>
+	<td th:text="${currentVacation.city}"/>
+	<td th:text="${currentVacation.numDays}"/>
+	<td th:text="${currentVacation.numPeople}"/>
+	<td th:text="${currentVacation.planeInfo.airlineName}"/>
+	<td th:text="${currentVacation.planeInfo.flightNum}"/>
+	<td th:text="${currentVacation.planeInfo.numOfBags}"/>
+	<td><a th:href="@{/edit/{id}(id=${currentVacation.id})}">Edit</a></td>
+	<td><a th:href="@{/delete/{id}(id=${currentVacation.id})}">Delete</a></td>
+	</tr>
+</table>
+</form>
+<a href="../inputVacation">Add a new vacation</a>
+</body>
+</html>
