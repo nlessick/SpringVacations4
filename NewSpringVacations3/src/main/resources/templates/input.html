@@ -5,13 +5,14 @@
 <title>Insert New Vacation</title>
 </head>
 <body>
+<div id="error"></div>
 <form th:object="${newVacation}" th:action="@{/update/{id}(id=${newVacation.id})}" method=POST>
-City: <input name="city" size="20" th:field="*{city}"><br />
-Number of Days: <input name="numDays" size="20" th:field="*{numDays}"><br />
-Number of People: <input name="numPeople" size="20" th:field="*{numPeople}"><br />
-Airline Company: <input name="planeInfo.airlineName" size="20" th:field="*{planeInfo.airlineName}"><br />
-Flight Number: <input name="planeInfo.flightNum" size="20" th:field="*{planeInfo.flightNum}"><br />
-Number of Bags: <input name="planeInfo.numOfBags" size="20" th:field="*{planeInfo.numOfBags}"><br />
+City: <input name="city" size="20" th:field="*{city}" required><br />
+Number of Days: <input name="numDays" size="20" th:field="*{numDays}" required><br />
+Number of People: <input name="numPeople" size="20" th:field="*{numPeople}" required><br />
+Airline Company: <input name="planeInfo.airlineName" size="20" th:field="*{planeInfo.airlineName}" required><br />
+Flight Number: <input name="planeInfo.flightNum" size="20" th:field="*{planeInfo.flightNum}" required><br />
+Number of Bags: <input name="planeInfo.numOfBags" size="20" th:field="*{planeInfo.numOfBags}" required><br />
 <input name="submit" type="submit" value="submit" />
 </form>
 <a href="viewAll">View all Vacations</a>
